@@ -5,7 +5,7 @@
  * @brief	main source file for cluster-service
  */
 
-#include "libredundancyfileop.h"
+#include "librefop.h"
 
 #include <stdio.h>
 #include <sys/stat.h>
