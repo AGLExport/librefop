@@ -60,7 +60,7 @@ PKG_CHECK_MODULES([GMOCK_MAIN], [gmock_main], , enable_test=no)
 
 AC_CONFIG_FILES([
 	Makefile 
-	libredundancyfileop.pc
+	librefop.pc
 	lib/Makefile
 	test/Makefile 
 	])
