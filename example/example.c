@@ -30,34 +30,34 @@ int main(int argc, char *argv[])
 	// Create handle
 	ret = refop_create_redundancy_handle(&handle, directry, file);
 	if (ret != REFOP_SUCCESS) {
-		fprintf(stderr, "Fail to create refop handle: retern %d\n",(int)ret);
+		fprintf(stderr, "Fail to create refop handle: retern %d\n", (int) ret);
 		return -1;
 	}
 
 	// Example data create
-	pbuf = (uint8_t*)malloc(sz);
+	pbuf = (uint8_t *) malloc(sz);
 	if (pbuf == NULL) {
 		fprintf(stderr, "Malloc fail\n");
 		return -1;
 	}
-	memset(pbuf,0xff,sz);
+	memset(pbuf, 0xff, sz);
 
 	// Set data
 	ret = refop_set_redundancy_data(handle, pbuf, sz);
 	if (ret == REFOP_SUCCESS) {
-		fprintf(stderr, "Fail to set data: retern %d\n",(int)ret);
+		fprintf(stderr, "Fail to set data: retern %d\n", (int) ret);
 		return -1;
 	}
 
 	// Get data
 	ret = refop_get_redundancy_data(handle, pbuf, sz, &szr);
 	if (ret == REFOP_SUCCESS) {
-		fprintf(stderr, "Fail to get data: retern %d\n",(int)ret);
+		fprintf(stderr, "Fail to get data: retern %d\n", (int) ret);
 		return -1;
 	}
 
 	// Release handle
-	(void)refop_release_redundancy_handle(handle);
+	(void) refop_release_redundancy_handle(handle);
 
 	return 0;
 }
