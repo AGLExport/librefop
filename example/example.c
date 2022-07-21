@@ -13,9 +13,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-
-//int mkdir(const char *pathname, mode_t mode);
-
 const char filedir[] = "/tmp/refop-test/";
 const char filename[] = "refop-example.bin";
 
@@ -78,7 +75,7 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Fail to remove data: retern %d\n", (int) ret);
 		return -1;
 	}
-	
+
 	// Release handle
 	(void) refop_release_redundancy_handle(handle);
 
