@@ -1,8 +1,8 @@
 /**
  * SPDX-License-Identifier: Apache-2.0
  *
- * @file	cluster-service.c
- * @brief	main source file for cluster-service
+ * @file	example.c
+ * @brief	example for librefop
  */
 
 #include "librefop.h"
@@ -10,8 +10,11 @@
 #include <stdio.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+#include <string.h>
+#include <stdlib.h>
 
-int mkdir(const char *pathname, mode_t mode);
+
+//int mkdir(const char *pathname, mode_t mode);
 
 const char filedir[] = "/tmp/refop-test/";
 const char filename[] = "refop-example.bin";
@@ -28,7 +31,7 @@ int main(int argc, char *argv[])
 	mkdir(filedir, 0777);
 
 	// Create handle
-	ret = refop_create_redundancy_handle(&handle, directry, file);
+	ret = refop_create_redundancy_handle(&handle, filedir, filename);
 	if (ret != REFOP_SUCCESS) {
 		fprintf(stderr, "Fail to create refop handle: retern %d\n", (int) ret);
 		return -1;
@@ -44,18 +47,38 @@ int main(int argc, char *argv[])
 
 	// Set data
 	ret = refop_set_redundancy_data(handle, pbuf, sz);
-	if (ret == REFOP_SUCCESS) {
+	if (ret != REFOP_SUCCESS) {
+		fprintf(stderr, "Fail to set data: retern %d\n", (int) ret);
+		return -1;
+	}
+
+	// Set data
+	ret = refop_set_redundancy_data(handle, pbuf, sz);
+	if (ret != REFOP_SUCCESS) {
+		fprintf(stderr, "Fail to set data: retern %d\n", (int) ret);
+		return -1;
+	}
+
+	// Set data
+	ret = refop_set_redundancy_data(handle, pbuf, sz);
+	if (ret != REFOP_SUCCESS) {
 		fprintf(stderr, "Fail to set data: retern %d\n", (int) ret);
 		return -1;
 	}
 
 	// Get data
 	ret = refop_get_redundancy_data(handle, pbuf, sz, &szr);
-	if (ret == REFOP_SUCCESS) {
+	if (ret != REFOP_SUCCESS) {
 		fprintf(stderr, "Fail to get data: retern %d\n", (int) ret);
 		return -1;
 	}
 
+	ret = refop_remove_redundancy_data(handle);
+	if (ret != REFOP_SUCCESS) {
+		fprintf(stderr, "Fail to remove data: retern %d\n", (int) ret);
+		return -1;
+	}
+	
 	// Release handle
 	(void) refop_release_redundancy_handle(handle);
 
