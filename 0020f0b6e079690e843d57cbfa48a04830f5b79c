@@ -1,0 +1,7 @@
+Code-Review+2: Jan-Simon Moeller <jsmoeller@linuxfoundation.org>
+Code-Review+1: keiya nobuta <nobuta.keiya@fujitsu.com>
+Submitted-by: Naoto YAMAGUCHI <naoto.yamaguchi@aisin.co.jp>
+Submitted-at: Thu, 28 Jul 2022 13:00:24 +0000
+Reviewed-on: https://gerrit.automotivelinux.org/gerrit/c/src/librefop/+/27817
+Project: src/librefop
+Branch: refs/heads/master
