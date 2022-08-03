@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f495ff17_760be282",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2022-08-03T20:42:35Z",
+      "side": 1,
+      "message": "What tool was used to reformat ?\nA linter ? Which one ?",
+      "revId": "6dd624e7fa14dd37f1e090cc910844940f4286f4",
+      "serverId": "2db66874-6d0c-4434-a3ad-56d904acc56e"
+    }
+  ]
+}
