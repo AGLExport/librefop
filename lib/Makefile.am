@@ -16,7 +16,7 @@ librefop_la_CFLAGS = \
 	-D_GNU_SOURCE 
 
 librefop_la_LDFLAGS = \
-	-export-symbols libredundancyfileop.sym -version-info 0:0:0
+	-export-symbols $(top_srcdir)/lib/libredundancyfileop.sym -version-info 0:0:0
 
 # configure option 
 if ENABLE_ADDRESS_SANITIZER
